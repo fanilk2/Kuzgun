@@ -1,0 +1,6 @@
+x=input("1. Sayı;")
+y=input("2. Sayı;")
+print(type(x))
+print(type(y))
+print("Toplam:",x+y)
+print("Toplam:",int(x)+int(y))
