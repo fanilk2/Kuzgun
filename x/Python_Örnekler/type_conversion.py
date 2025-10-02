@@ -4,7 +4,7 @@
 #print(type(y))
 #print("Toplam:",x+y)
 #print("Toplam:",int(x)+int(y))
-pi =3.14
-r=input("Yarıçap:")
-print("Alan:",pi*float(r)*float(r))
-print("Çevre:",2*pi*float(r))
+pi =3.14 
+r=input("Yarıçap:") 
+print("Alan:",pi*float(r)*float(r)) #alan=pi*r*r
+print("Çevre:",2*pi*float(r)) #çevre=2*pi*r
