@@ -1,17 +1,11 @@
-tumplakalar={"Adana":1,"Adıyaman":2,"Afyon":3,"Ağrı":4,"Amasya":5,"Ankara":6,"Antalya":7,"Artvin":8,"Aydın":9,
-"Balıkesir":10,"Bilecik":11,"Bingöl":12,"Bitlis":13,"Bolu":14,"Burdur":15,"Bursa":16,"Çanakkale":17,
-"Çankırı":18,"Çorum":19,"Denizli":20,"Diyarbakır":21,"Edirne":22,"Elazığ":23,"Erzincan":24,"Erzurum":25,
-"Eskişehir":26,"Gaziantep":27,"Giresun":28,"Gümüşhane":29,"Hakkari":30,"Hatay":31,"Isparta":32,"Mersin":33,
-"İstanbul":34,"İzmir":35,"Kars":36,"Kastamonu":37,"Kayseri":38,"Kırklareli":39,"Kırşehir":40,"Kocaeli":41,
-"Konya":42,"Kütahya":43,"Malatya":44,"Manisa":45,"Kahramanmaraş":46,"Mardin":47,"Muğla":48,"Muş":49,
-"Nevşehir":50,"Niğde":51,"Ordu":52,"Rize    ":53,"Sakarya":54,"Samsun":55,"Siirt":56,"Sinop":57,"Sivas":58,
-"Tekirdağ":59,"Tokat":60,"Trabzon":61,"Tunceli":62,"Şanlıurfa":63,"Uşak":64,"Van":65,"Yozgat":66,
-"Zonguldak":67,"Aksaray":68,"Bayburt":69,"Karaman":70,"Kırıkkale":71,"Batman":72,"Şırnak":73,"Bartın":74,
-"Ardahan":75,"Iğdır":76,"Yalova":77,"Karabük":78,"Kilis":79,"Osmaniye":80,"Düzce":81} #plaka kodları ve şehir isimleri sözlüğü
+#--------------------------------#
+#Plaka Bulucu
+#--------------------------------#
+plakalar={1:"Adana",2:"Adıyaman",3:"Afyon",4:"Ağrı",5:"Amasya",6:"Ankara",7:"Antalya",8:"Artvin",9:"Aydın",10:"Balıkesir",11:"Bilecik",12:"Bingöl",13:"Bitlis",14:"Bolu",15:"Burdur",16:"Bursa",17:"Çanakkale",18:"Çankırı",19:"Çorum",20:"Denizli",
+21:"Diyarbakır",22:"Edirne",23:"Elazığ",24:"Erzincan",25:"Erzurum",26:"Eskişehir",27:"Gaziantep",28:"Giresun",29:"Gümüşhane",30:"Hakkari",31:"Hatay",32:"Isparta",33:"Mersin",34:"İstanbul",35:"İzmir",36:"Kars",37:"Kastamonu",38:"Kayseri",39:"Kırklareli",40:"Kırşehir",
+41:"Kocaeli",42:"Konya",43:"Kütahya",44:"Malatya",45:"Manisa",46:"Kahramanmaraş",47:"Mardin",48:"Muğla",49:"Muş",50:"Nevşehir",51:"Niğde",52:"Ordu",53:"Rize",54:"Sakarya",55:"Samsun",56:"Siirt",57:"Sinop",58:"Sivas",59:"Tekirdağ",60:"Tokat",
+61:"Trabzon",62:"Tunceli",63:"Şanlıurfa",64:"Uşak",65:"Van",66:"Yozgat",67:"Zonguldak",68:"Aksaray",69:"Bayburt",70:"Karaman",71:"Kırıkkale",72:"Batman",73:"Şırnak",74:"Bartın",75:"Ardahan",76:"Iğdır",77:"Yalova",78:"Karabük",79:"Kilis",80:"Osmaniye",81:"Düzce"} #plaka kodları ve şehir isimleri sözlüğü
 plaka=input("Plaka Kodu:") #kullanıcıdan plaka kodu alan dictionary
-plaka=int(plaka) #kullanıcının girdiği plaka kodunu integera çevirir74
-sehir=tumplakalar.get(plaka) #kullanıcının girdiği plaka kodunu sözlükte arar
-
-print(tumplakalar) #sözlüğü yazdır
-
+plaka=int(plaka) #kullanıcının girdiği plaka kodunu integera çevirir
+sehir=plakalar.get(plaka) #kullanıcının girdiği plaka kodunu sözlükte arar
 print(sehir) #kullanıcının girdiği plaka koduna karşılık gelen şehir ismini yazdır

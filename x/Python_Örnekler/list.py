@@ -40,3 +40,17 @@ print(val)
 tuple=(1,2,3,4,5)
 tip=type(tuple)
 print(tip)
+
+#--------------------------------
+#set
+#--------------------------------
+set={1,2,3,4,5,5,4,3} #aynı elemanları bir kere alır
+tip=type(set)
+print(tip)
+#--------------------------------
+#dictionary
+#--------------------------------
+dictionary={"book":"kitap","table":"masa","computer":"bilgisayar"}
+tip=type(dictionary)
+print(tip)
+val=dictionary["book"] #book anahtarına karşılık gelen değeri verir
