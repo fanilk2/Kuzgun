@@ -15,11 +15,3 @@ cities=["Ankara","İstanbul","İzmir"]
 for name,age,city in zip(names,ages,cities):
     print(name,age,city)
 #--------------------------------
-#map (function,iterable)
-def square(num):
-    return num**2
-numbers=[1,2,3,4,5]
-squared_numbers=map(square,numbers)
-for num in squared_numbers:
-    print(num)
-    
