@@ -8,8 +8,10 @@ tumplakalar={"Adana":1,"Adıyaman":2,"Afyon":3,"Ağrı":4,"Amasya":5,"Ankara":6,
 "Tekirdağ":59,"Tokat":60,"Trabzon":61,"Tunceli":62,"Şanlıurfa":63,"Uşak":64,"Van":65,"Yozgat":66,
 "Zonguldak":67,"Aksaray":68,"Bayburt":69,"Karaman":70,"Kırıkkale":71,"Batman":72,"Şırnak":73,"Bartın":74,
 "Ardahan":75,"Iğdır":76,"Yalova":77,"Karabük":78,"Kilis":79,"Osmaniye":80,"Düzce":81} #plaka kodları ve şehir isimleri sözlüğü
-plaka=input("Plaka Kodu:") #kullanıcıdan plaka kodu al
-plaka=int(plaka) #string ifadeyi inte çevir
+plaka=input("Plaka Kodu:") #kullanıcıdan plaka kodu alan dictionary
+plaka=int(plaka) #kullanıcının girdiği plaka kodunu integera çevirir74
+sehir=tumplakalar.get(plaka) #kullanıcının girdiği plaka kodunu sözlükte arar
+
 print(tumplakalar) #sözlüğü yazdır
 
-print(tumplakalar.get(plaka)) #kullanıcının girdiği plaka koduna karşılık gelen şehir ismini yazdır
+print(sehir) #kullanıcının girdiği plaka koduna karşılık gelen şehir ismini yazdır
