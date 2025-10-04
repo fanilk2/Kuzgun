@@ -1,5 +1,5 @@
-import random
-x=random.randint(1,100)
+import random #rastgele sayı üretmek için
+x=random.randint(1,100) #1-100 arasında rastgele sayı üret
 i=0
 while i<10:
     y=int(input("Bir sayı giriniz:"))
