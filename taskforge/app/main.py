@@ -71,7 +71,7 @@ def create_entry(payload: EntryCreate, db: Session = Depends(get_db)):
         duration_min=payload.duration_min,
         note=payload.note,
         tags_csv=",".join(payload.tags) if payload.tags else None,
-        score_delta=calculate_score(payload.activity,payload.duration_min),
+        score_delta = calculate_score(payload.activity, payload.duration_min),
     )
     db.add(entry); db.commit(); db.refresh(entry)
 
