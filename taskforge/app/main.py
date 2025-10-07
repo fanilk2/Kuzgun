@@ -2,10 +2,10 @@ from typing import List
 from fastapi import Depends, FastAPI
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
-
+from fastapi import HTTPException, status
 from app.db import init_db, SessionLocal
 from app import models
-
+from app.rules_engine import calculate_score
 app = FastAPI(title="TaskForge")
 
 @app.on_event("startup")
@@ -71,7 +71,7 @@ def create_entry(payload: EntryCreate, db: Session = Depends(get_db)):
         duration_min=payload.duration_min,
         note=payload.note,
         tags_csv=",".join(payload.tags) if payload.tags else None,
-        score_delta=0,
+        score_delta=calculate_score(payload.activity,payload.duration_min),
     )
     db.add(entry); db.commit(); db.refresh(entry)
 
@@ -103,3 +103,20 @@ def list_entries(db: Session = Depends(get_db)):
             )
         )
     return out
+# --- DELETE /api/entries/{entry_id} : tek kaydı sil
+@app.delete("/api/entries/{entry_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_entry(entry_id: int, db: Session = Depends(get_db)):
+    entry = db.query(models.Entry).filter(models.Entry.id == entry_id).first()
+    if not entry:
+        raise HTTPException(status_code=404, detail="Entry not found")
+    db.delete(entry)
+    db.commit()
+    # 204 No Content: gövde döndürmüyoruz
+
+# --- DİKKAT: tüm kayıtları siler; sadece geliştirme için!
+@app.delete("/api/entries", status_code=status.HTTP_204_NO_CONTENT)
+def delete_all_entries(confirm: bool = False, db: Session = Depends(get_db)):
+    if not confirm:
+        raise HTTPException(status_code=400, detail="Set confirm=true to proceed")
+    db.query(models.Entry).delete()
+    db.commit()
