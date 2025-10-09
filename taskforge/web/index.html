@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskForge Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>TaskForge</h1>
+        <button id="refresh-button" type="button">Yenile</button>
+    </header>
+
+    <main>
+        <section class="card" id="summary-card">
+            <h2>Gün Özeti</h2>
+            <div class="summary-grid">
+                <div>
+                    <span class="label">Tarih</span>
+                    <span id="summary-date" class="value">-</span>
+                </div>
+                <div>
+                    <span class="label">Toplam Süre (dk)</span>
+                    <span id="summary-minutes" class="value">0</span>
+                </div>
+                <div>
+                    <span class="label">Toplam Puan</span>
+                    <span id="summary-score" class="value">0</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="activity-form-card">
+            <h2>Yeni Aktivite</h2>
+            <form id="activity-form">
+                <div class="form-row">
+                    <label for="activity-name">Ad</label>
+                    <input id="activity-name" name="name" required>
+                </div>
+                <div class="form-row">
+                    <label for="activity-category">Kategori</label>
+                    <input id="activity-category" name="category" placeholder="isteğe bağlı">
+                </div>
+                <div class="form-row">
+                    <label for="activity-points">10 dk başı puan</label>
+                    <input id="activity-points" name="points_per_10_min" type="number" required>
+                </div>
+                <button type="submit">Aktivite Kaydet</button>
+                <p class="form-status" id="activity-status"></p>
+            </form>
+        </section>
+
+        <section class="card" id="entry-form-card">
+            <h2>Yeni Kayıt</h2>
+            <form id="entry-form">
+                <div class="form-row">
+                    <label for="entry-activity">Aktivite</label>
+                    <select id="entry-activity" name="activity_name"></select>
+                </div>
+                <div class="form-row">
+                    <label for="entry-duration">Süre (dk)</label>
+                    <input id="entry-duration" name="duration_min" type="number" min="1" value="30" required>
+                </div>
+                <div class="form-row">
+                    <label for="entry-note">Not</label>
+                    <input id="entry-note" name="note" placeholder="isteğe bağlı">
+                </div>
+                <div class="form-row">
+                    <label for="entry-tags">Etiketler</label>
+                    <input id="entry-tags" name="tags" placeholder="virgülle ayır">
+                </div>
+                <button type="submit">Kaydı Ekle</button>
+                <p class="form-status" id="entry-status"></p>
+            </form>
+        </section>
+
+        <section class="card" id="entries-card">
+            <div class="card-header">
+                <h2>Son Kayıtlar</h2>
+                <span id="entries-count" class="badge">0</span>
+            </div>
+            <table id="entries-table">
+                <thead>
+                    <tr>
+                        <th>Aktivite</th>
+                        <th>Süre</th>
+                        <th>Puan</th>
+                        <th>Not</th>
+                        <th>Etiketler</th>
+                        <th>Tarih</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section class="card" id="reminders-card">
+            <div class="card-header">
+                <h2>Hatırlatmalar</h2>
+                <span id="reminders-count" class="badge">0</span>
+            </div>
+            <ul id="reminders-list"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <small>TaskForge &middot; her 10 dakikalık emek değerli</small>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
